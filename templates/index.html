@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+	<!-- banner section start-->
+	<div class="banner_section layout_padding">
+		<div class="container">
+			<h1 class="best_taital">Best Search here</h1>
+
+			<form action="s" method="post">
+			{% csrf_token %}
+			<div class="box_main">
+				{{form}}
+				<button class="subscribe_bt">search</button>
+			</div>
+			</form>
+
+			<p class="there_text">description</p>
+			<div class="bt_main">
+				<div class="discover_bt"><a href="#">Discover More</a></div>
+			</div>
+		</div>
+	</div>
+	<!-- banner section end-->
+	<!-- footer section start-->
+	<div class="footer_section layout_padding">
+		<div class="container">
+			<h1 class="subscribr_text">Subscribe Now</h1>
+			<p class="lorem_text">There are have
+			</p>
+			<div class="box_main_2">
+				<textarea type="" class="email_bt_2" placeholder="Enter Your Email" name=""></textarea>
+			</div>
+			<button class="subscribe_bt_2"><a href="#">Subscribe</a></button>
+		</div>
+	</div>
+	<!-- footer section end-->
+
+
+
+
+
+
+{% endblock %}
+
+

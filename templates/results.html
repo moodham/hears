@@ -1,0 +1,139 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+
+
+
+
+<!-- Recurments  section start-->
+<div class="services_section" style="text-align: center;">
+  <div class="container" style=" max-height: 10%; display: inline-flex;">
+    <a href="{%url "pic" %}"><h3 class="services_text" style=" max-height: 10%; line-height: 100px; font-size:190%;">images</h3></a>
+    <h2 class="services_text" style=" max-height: 10%; margin: 0%; ">search results</h2>
+    <a href="{%url "vid" %}"><h3  class="services_text" style=" max-height: 10%; line-height: 100px; font-size:190%;" >videos</h3></a>
+  </div>
+</div>
+
+<div class="Recurments_section_2">
+  <div class="container" style="  display: flex; flex-direction: row;">
+
+    <div>
+      {% for i in ww %}
+      <div class="product_section">
+        <div class="row padding_top_0">
+          <div class="col-sm-2" style="max-width: 10%;">
+            <div class="one_text"><a href="http://{{i|slice:'2:3'|first}}" class="active">{{ forloop.counter }} </a>
+            </div>
+          </div>
+          <div class="col-sm-8">
+            <h1 class="software_text">{{i|slice:"0:1"|first}}</h1>
+            <p class="lorem_ipsum_text">{{i|slice:"1:2"|first|truncatechars:160}} </p>
+          </div>
+          <div class="col-sm-2">
+            <a href="http://{{i|slice:'2:3'|first}}"><button class="apply_now">Go</button></a>
+          </div>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+
+
+  <!-- wrs ============================================= -->
+
+    <div style="margin-left: 3%; margin-top: 5%;">
+      <p style="width: max-content;">Ralated search <br><br> </p>
+
+      {% for i in wrs %}
+
+      <ul>
+        <a href="{%url "wrs" forloop.counter %}">
+          <link style="font-size:medium;">{{i|first}}</link>
+        </a>
+
+        <!-- more search results here -->
+      </ul>
+      <br>
+
+      {% endfor %}
+
+    </div>
+      <!-- wrs ============================================= -->
+
+  </div>
+
+</div>
+<!-- Recurments  section end-->
+
+
+
+<!-- -------------------wp============================================= -->
+
+<!-- -------------------wv============================================= -->
+
+
+<!-- End of some extra features ============================================= -->
+
+
+
+<!-- wpn ============================================= -->
+<div style="text-align: center;max-width: 100%;">
+  {% for i in wpn %}
+
+  <div class="btn"><a class="wpn" href={% url "searchpages" forloop.counter %}>page{{forloop.counter}}</a>
+
+
+
+  </div>
+  {% endfor %}
+</div>
+
+<!-- wpn ============================================= -->
+
+<div class="Recurments_section">
+
+  <div style="text-align: center;">
+
+    <div style="display: inline;">
+
+      {% for i in wp %}
+
+
+      <a href=""><img src="{{i|last}}" title="{{i|first}}" alt="{{i|first}}"></a>
+      <!-- more search results here -->
+
+      {% endfor %}
+
+    </div>
+    <a href="{%url "pic" %}"><button type="button" class="btn btn-outline-secondary">More
+        Picture</button> </a>
+  </div>
+
+  <br>
+  <!-- video ------------------------------------------------------e -->
+  <div style="text-align: center;">
+
+
+    <div style="display: inline-block;">
+      {% for i in wv %}
+      <div style="position: relative;    display: inline-block;">
+        <a href="{{i|slice:" 4:5"|first}}">
+          <img src="{{i|slice:" 3:4"|first}}" title="{{i|slice:" 1:2"|first}}" alt="{{i|slice:" 1:2"|first}}"
+            style="z-index: 1;">
+          <div style="position: absolute;z-index: 2;bottom: 1%;">{{i|slice:"0:1"|first}}
+
+            {{i|slice:"2:3"|first}}</div>
+        </a>
+      </div>
+      <!-- more search results here -->
+
+      {% endfor %}
+    </div>
+
+    <a href="{%url "vid" %}"><button type="button" class="btn btn-outline-secondary">More video</button> </a>
+  </div>
+</div>
+
+<!-- video ------------------------------------------------------e -->
+
+{% endblock %}

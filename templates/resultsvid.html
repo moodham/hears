@@ -1,0 +1,52 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+
+
+
+
+<!-- Recurments  section start-->
+<div class="services_section" style="text-align: center;">
+  <div class="container" style=" max-height: 10%; display: inline-flex;">
+    <a href="{% url 'pic' %}">
+      <h3 class="services_text" style=" max-height: 10%; line-height: 100px; font-size:190%;">images</h3>
+    </a>
+    <h2 class="services_text" style=" max-height: 10%; margin: 0%; ">search results</h2>
+    <a href="{% url 'vid' %}">
+      <h3 class="services_text" style=" max-height: 10%; line-height: 100px; font-size:190%;">videos</h3>
+    </a>
+  </div>
+</div>
+
+
+<!-- video ------------------------------------------------------e -->
+<div style="text-align: center;">
+
+
+  <div style="display: inline-block;">
+    {% for i in wv %}
+    <div style="position: relative;    display: inline-block;">
+      <a href="{{i|slice:" 0:1"|first}}">
+        <img style="  border: 1px solid #ddd;
+  border-radius: 4px;
+  padding: 5px;
+  width: 150px;height: 150px;" src="{{i|slice:" 1:2"|first}}" title="{{i|slice:" 2:3"|first}}" alt="{{i|slice:" 2:3"|first}} "
+            style=" z-index: 1;">
+        <div style="position: absolute;z-index: 2;bottom: 1%;">{{i|slice:"3:4"|first}}
+
+          {{i|slice:"4:5"|first}}</div>
+      </a>
+    </div>
+    <!-- more search results here -->
+
+    {% endfor %}
+  </div>
+
+  <a href="{%url 'vid'%}"><button type="button" class="btn btn-outline-secondary">More video</button> </a>
+</div>
+</div>
+
+<!-- video -------------------------------------------------------->
+
+{% endblock %}

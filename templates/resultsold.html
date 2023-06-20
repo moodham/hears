@@ -1,0 +1,99 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+<body>
+	<!-- //section-title -->
+
+	<!-- ww ============================================= -->
+
+	<h2>ww "
+
+	</h2>
+	{% for i in ww %}
+
+	<ul>
+		<li>{{i|slice:"0:1"|first}}</li>
+		<li>{{i|slice:"1:2"|first}}</li>
+		<li>{{i|slice:"2:3"|first}}</li>
+
+		<!-- more search results here -->
+	</ul>
+
+	{% endfor %}
+
+	<!-- wrs ============================================= -->
+	<h2>wrs "
+
+	</h2>
+	{% for i in wrs %}
+
+	<ul>
+		<li>{{i|first}}</li>
+		<li>{{i|last}}</li>
+
+		<!-- more search results here -->
+	</ul>
+
+	{% endfor %}
+
+
+
+	<!-- wpn ============================================= -->
+
+	<h2>wpn "
+
+	</h2>
+	{% for i in wpn %}
+
+	<ul>
+		<li>{{i}}</li>
+
+
+		<!-- more search results here -->
+	</ul>
+
+	{% endfor %}
+
+
+
+	<!-- wp ============================================= -->
+	<h2>wp "
+
+	</h2>
+	{% for i in wp %}
+
+	<ul>
+		<li>{{i|first}}</li>
+		<li>{{i|last}}</li>
+
+
+		<!-- more search results here -->
+	</ul>
+
+	{% endfor %}
+{{pmorpicaddress}}
+	<!-- -------------------wv============================================= -->
+	<h2>wv "
+	
+	</h2>
+	{% for i in wv %}
+	
+	<ul>
+
+			<li>{{i|slice:"0:1"|first}}</li>
+			<li>{{i|slice:"1:2"|first}}</li>
+			<li>{{i|slice:"2:3"|first}}</li>
+			<li>{{i|slice:"3:4"|first}}</li>
+	
+		<!-- more search results here -->
+	</ul>
+	
+	{% endfor %}
+{{vmorvideoaddress}}
+
+	<!-- End of some extra features ============================================= -->
+
+
+</body>
+{% endblock %}

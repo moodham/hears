@@ -1,0 +1,52 @@
+
+.loader 
+{
+    position: absolute;
+    width: 150px;
+    height: 150px;
+    overflow: visible;
+    
+    
+    
+}
+.loader span  
+{
+      
+  background-image: radial-gradient(red, yellow, green);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 50%;
+    height: 50%;
+    transform: rotate(calc(120deg * var(--i)));
+    border:  2px solid #960a15;
+
+
+    border-radius: 0%;
+    animation: animate2 5s linear infinite;
+    animation-delay: calc(-0.25s *  var(--i));
+
+}
+
+
+
+@keyframes animate2
+{
+    0%
+    {
+        border-radius: 50%;
+   
+    }
+    50%
+    {
+  
+        border-radius: 0%;
+      
+    }
+    100%
+    {
+        border-radius: 50%;
+  
+    }
+}
+**************************************

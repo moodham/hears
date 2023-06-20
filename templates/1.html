@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+
+<head>
+	<meta charset="UTF-8">
+	<title>Search Box Design</title>
+
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title> {{page_title}} </title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	{% if context.post_keywords %}
+	<meta name="keywords" content="{{context.post_keywords}}">
+	<meta name="description" content="{{context.post_description}}">
+	{% endif %}
+	<link rel="stylesheet" href={% static "css/styles.css" %}>
+</head>
+
+<body>
+
+
+
+
+	<form action="3" method="post">
+		{% csrf_token %}
+		<div class="wrapper">
+			{{form}}
+			<input class="searchbtn" type="submit" value="">
+		</div>
+	</form>
+
+
+</body>
+
+</html>
