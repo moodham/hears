@@ -7,11 +7,13 @@ from .form import searchform
 from .classaolw import findaol, findpage
 from .classaolpic import findaolpic
 from .classaolvid import findaolvid
+from django.views.decorators.csrf import csrf_exempt
 
 
 # class home(TemplateView):
 #    template_name = "index.html"
 
+@csrf_exempt
 
 def home(request):
     context = inspect.objects.all()
