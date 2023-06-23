@@ -14,7 +14,6 @@ from django.views.decorators.csrf import csrf_exempt
 #    template_name = "index.html"
 
 @csrf_exempt
-
 def home(request):
     context = inspect.objects.all()
     a = int(context.count())
